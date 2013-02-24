@@ -9,28 +9,29 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tienes las bolas necesarias?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXK-cp-5JG">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="O no?????" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ill-Gr-EGf">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STs-zu-hEv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="4HV-DE-f8Q"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="fz6-up-nTq"/>
+                                    <outlet property="delegate" destination="2" id="3CZ-fe-zE7"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VXK-cp-5JG" firstAttribute="top" secondItem="3" secondAttribute="top" constant="44" id="WB5-eb-iI7"/>
-                            <constraint firstItem="ill-Gr-EGf" firstAttribute="centerX" secondItem="VXK-cp-5JG" secondAttribute="centerX" type="default" id="Xc3-rf-GtN"/>
-                            <constraint firstItem="ill-Gr-EGf" firstAttribute="top" secondItem="VXK-cp-5JG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jOV-E5-FU1"/>
-                            <constraint firstItem="ill-Gr-EGf" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="sVT-1m-LLu"/>
+                            <constraint firstItem="STs-zu-hEv" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="MMR-Qd-ko9"/>
+                            <constraint firstItem="STs-zu-hEv" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="O1r-sc-Hjk"/>
+                            <constraint firstItem="STs-zu-hEv" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="t7U-aP-iBS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="STs-zu-hEv" id="16p-5F-1S5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,11 +43,14 @@
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
